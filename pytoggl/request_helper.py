@@ -9,7 +9,12 @@ class RequestHelper:
         """ Initialize the Request Helper """
         self.togglAuth = (apiToken, 'api_token')
         
-    def sendRequest(self, url):
-        """ Send the given request to the url provided """
+    def get(self, url):
+        """ Send a get request to the url provided """
         fullUrl = "{0}/{1}".format(self.url, url)
         return requests.get(fullUrl, headers=self.togglHeaders, auth=self.togglAuth)
+        
+    def post(self, url, data=None):
+        """ Send a post request to the url provided """
+        fullUrl = "{0}/{1}".format(self.url, url)
+        return requests.post(fullUrl, headers=self.togglHeaders, auth=self.togglAuth, data=data)

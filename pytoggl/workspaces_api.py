@@ -11,7 +11,7 @@ class WorkspacesAPI:
         
     def getAll(self):
         """ Return all the workspaces """
-        response = self.requestHelper.sendRequest(self.baseUrl)
+        response = self.requestHelper.get(self.baseUrl)
         workspaces = []
         if response.status_code == 200:
             for workspaceJSON in response.json():
@@ -22,7 +22,7 @@ class WorkspacesAPI:
     def getProjects(self, workspace):
         """ Return all projects for the given workspace """
         url = "{0}/{1}/projects".format(self.baseUrl, workspace.id)
-        response = self.requestHelper.sendRequest(url)
+        response = self.requestHelper.get(url)
         
         projects = []
         if response.status_code == 200:
