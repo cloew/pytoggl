@@ -2,10 +2,13 @@
 class Project:
     """ Represents a Toggl Project """
     
-    def __init__(self, json=None):
+    def __init__(self, id=None, json=None):
         """ Initialize a Toggl Project """
-        self.id = json["id"]
-        self.name = json["name"]
+        if json is not None:
+            self.id = json["id"]
+            self.name = json["name"]
+        else:
+            self.id = id
         
     def __repr__(self):
         """ String representation of the project """
