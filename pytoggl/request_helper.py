@@ -1,3 +1,4 @@
+import json
 import requests
 
 class RequestHelper:
@@ -17,4 +18,4 @@ class RequestHelper:
     def post(self, url, data=None):
         """ Send a post request to the url provided """
         fullUrl = "{0}/{1}".format(self.url, url)
-        return requests.post(fullUrl, headers=self.togglHeaders, auth=self.togglAuth, data=data)
+        return requests.post(fullUrl, headers=self.togglHeaders, auth=self.togglAuth, data=json.dumps(data))

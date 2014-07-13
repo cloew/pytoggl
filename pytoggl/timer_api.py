@@ -8,8 +8,16 @@ class TimerAPI:
         """ Initialize the Timer API """
         self.requestHelper = requestHelper
         
-    def startTimer(self):
+    def startTimer(self, timeEntry):
         """ Start the Timer """
+        url = "{0}/start".format(self.baseUrl)
+        response = self.requestHelper.post(url, data=timeEntry.toJSONDictionary())
+        
+        createdTimeEntry = None
+        if response.status_code == 200 and response.json()["data"] is not None:
+            createdTimeEntry = TimeEntry(json=response.json())
+            
+        return createdTimeEntry
         
     def current(self):
         """ Return the current Time Entry """
