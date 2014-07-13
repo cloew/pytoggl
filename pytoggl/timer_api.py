@@ -19,6 +19,17 @@ class TimerAPI:
             
         return createdTimeEntry
         
+    def stopTimer(self, timeEntry):
+        """ Stop the Timer """
+        url = "{0}/{1}/stop".format(self.baseUrl, timeEntry.id)
+        response = self.requestHelper.put(url)
+        
+        stoppedTimeEntry = None
+        if response.status_code == 200 and response.json()["data"] is not None:
+            stoppedTimeEntry = TimeEntry(json=response.json())
+            
+        return stoppedTimeEntry
+        
     def current(self):
         """ Return the current Time Entry """
         url = "{0}/current".format(self.baseUrl)
