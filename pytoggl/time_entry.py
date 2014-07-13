@@ -4,6 +4,7 @@ class TimeEntry:
     
     def __init__(self, json=None):
         """ Initialize a Toggl Time Entry """
+        json = json["data"]
         self.id = json["id"]
         self.description = json["description"]
         

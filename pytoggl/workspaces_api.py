@@ -23,6 +23,7 @@ class WorkspacesAPI:
         """ Return all projects for the given workspace """
         url = "{0}/{1}/projects".format(self.baseUrl, workspace.id)
         response = self.requestHelper.sendRequest(url)
+        
         projects = []
         if response.status_code == 200:
             for projectJSON in response.json():
