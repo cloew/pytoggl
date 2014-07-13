@@ -1,3 +1,4 @@
+from project import Project
 from workspace import Workspace
 
 class WorkspacesAPI:
@@ -17,3 +18,14 @@ class WorkspacesAPI:
                 workspaces.append(Workspace(workspaceJSON))
             
         return workspaces
+        
+    def getProjects(self, workspace):
+        """ Return all projects for the given workspace """
+        url = "{0}/{1}/projects".format(self.baseUrl, workspace.id)
+        response = self.requestHelper.sendRequest(url)
+        projects = []
+        if response.status_code == 200:
+            for projectJSON in response.json():
+                projects.append(Project(projectJSON))
+            
+        return projects
