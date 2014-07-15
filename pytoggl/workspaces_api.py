@@ -15,7 +15,7 @@ class WorkspacesAPI:
         workspaces = []
         if response.status_code == 200:
             for workspaceJSON in response.json():
-                workspaces.append(Workspace(workspaceJSON))
+                workspaces.append(Workspace(json=workspaceJSON))
             
         return workspaces
         
@@ -27,6 +27,6 @@ class WorkspacesAPI:
         projects = []
         if response.status_code == 200:
             for projectJSON in response.json():
-                projects.append(Project(projectJSON))
+                projects.append(Project(json=projectJSON))
             
         return projects
