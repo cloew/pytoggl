@@ -15,7 +15,7 @@ class TimerAPI:
         
         createdTimeEntry = None
         if response.status_code == 200 and response.json()["data"] is not None:
-            createdTimeEntry = TimeEntry(json=response.json())
+            createdTimeEntry = TimeEntry(json=response.json()["data"])
             
         return createdTimeEntry
         
@@ -26,7 +26,7 @@ class TimerAPI:
         
         stoppedTimeEntry = None
         if response.status_code == 200 and response.json()["data"] is not None:
-            stoppedTimeEntry = TimeEntry(json=response.json())
+            stoppedTimeEntry = TimeEntry(json=response.json()["data"])
             
         return stoppedTimeEntry
         
@@ -37,6 +37,6 @@ class TimerAPI:
         
         currentTimeEntry = None
         if response.status_code == 200 and response.json()["data"] is not None:
-            currentTimeEntry = TimeEntry(json=response.json())
+            currentTimeEntry = TimeEntry(json=response.json()["data"])
             
         return currentTimeEntry
