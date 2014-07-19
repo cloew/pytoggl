@@ -1,20 +1,11 @@
+from json_base import JsonBase
 
-class TimeEntry:
+class TimeEntry(JsonBase):
     """ Represents a Toggl Time Entry """
-    
-    def __init__(self, description=None, project=None, json=None):
-        """ Initialize a Toggl Time Entry """
-        if json is not None:
-            json = json["data"]
-            self.id = json["id"]
-            self.description = json["description"]
-        else:
-            self.pid = project.id
-            self.description = description
             
     def toJSONDictionary(self):
         """ Convert the Time Entry to JSON """
-        return {"time_entry":{"description":self.description, "pid":self.pid}}
+        return {"time_entry":JsonBase.toJSONDictionary(self)}
         
     def __repr__(self):
         """ String representation of the Time Entry """
