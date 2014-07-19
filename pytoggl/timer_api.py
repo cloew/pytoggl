@@ -1,4 +1,4 @@
-from time_entry import TimeEntry
+from pytoggl.model.time_entry import TimeEntry
 
 class TimerAPI:
     """ Represents the Toggl Timer API """

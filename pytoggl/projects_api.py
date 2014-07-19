@@ -1,4 +1,4 @@
-from project import Project
+from pytoggl.model.project import Project
 
 class ProjectsAPI:
     """ Represents the Toggl Projects API """
