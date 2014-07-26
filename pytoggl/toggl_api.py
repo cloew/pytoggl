@@ -2,7 +2,7 @@ from pytoggl.api.projects_api import ProjectsAPI
 from pytoggl.api.timer_api import TimerAPI
 from pytoggl.api.workspaces_api import WorkspacesAPI
 
-from request_helper import RequestHelper
+from pytoggl.api.request_helper import RequestHelper
 
 class TogglAPI:
     """ Represents the top level of the Toggl API """
