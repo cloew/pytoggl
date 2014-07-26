@@ -5,28 +5,27 @@ class WorkspacesAPI:
     """ Represents the Toggl Workspaces API """
     baseUrl = 'workspaces'
     
-    def __init__(self, requestHelper):
+    def __init__(self, apiHelper):
         """ Initialize the Workspaces API """
-        self.requestHelper = requestHelper
+        self.apiHelper = apiHelper
         
     def getAll(self):
         """ Return all the workspaces """
-        response = self.requestHelper.get(self.baseUrl)
+        json = self.apiHelper.get(self.baseUrl)
+        
         workspaces = []
-        if response.status_code == 200:
-            for workspaceJSON in response.json():
-                workspaces.append(Workspace(json=workspaceJSON))
+        for workspaceJSON in json:
+            workspaces.append(Workspace(json=workspaceJSON))
             
         return workspaces
         
     def getProjects(self, workspace):
         """ Return all projects for the given workspace """
         url = "{0}/{1}/projects".format(self.baseUrl, workspace.id)
-        response = self.requestHelper.get(url)
+        json = self.apiHelper.get(url)
         
         projects = []
-        if response.status_code == 200:
-            for projectJSON in response.json():
-                projects.append(Project(json=projectJSON))
+        for projectJSON in response.json():
+            projects.append(Project(json=projectJSON))
             
         return projects

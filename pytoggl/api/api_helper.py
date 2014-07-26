@@ -1,3 +1,4 @@
+from pytoggl.api.request_helper import RequestHelper
 
 class ApiHelper:
     """ Helper class to perform Toggl API requests """
@@ -11,17 +12,17 @@ class ApiHelper:
     def get(self, url, getData=False):
         """ Return the response JSON from a get request """
         response = self.requestHelper.get(url)
-        self.processor[getData](response)
+        return self.processor[getData](response)
         
     def put(self, url, data=None, getData=False):
         """ Return the response JSON from a get request """
         response = self.requestHelper.put(url, data=data)
-        self.processor[getData](response)
+        return self.processor[getData](response)
         
     def post(self, url, data=None, getData=False):
         """ Return the response JSON from a get request """
         response = self.requestHelper.post(url, data=data)
-        self.processor[getData](response)
+        return self.processor[getData](response)
     
     def processResponse(self, response):
         """ Process a given response """
