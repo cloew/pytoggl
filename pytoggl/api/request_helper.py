@@ -2,7 +2,7 @@ import json
 import requests
 
 class RequestHelper:
-    """ Helper class to perfor Toggl REST requests """
+    """ Helper class to perform Toggl REST requests """
     url = 'https://www.toggl.com/api/v8'
     togglHeaders = {'content-type': 'application/json'}
     
