@@ -1,4 +1,5 @@
 import sys
+
 class JsonBase:
     """ Represents a JSON based class """
     
