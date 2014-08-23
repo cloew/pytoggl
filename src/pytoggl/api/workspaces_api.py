@@ -29,3 +29,13 @@ class WorkspacesAPI:
             projects.append(Project(json=projectJSON))
             
         return projects
+        
+    def findByName(self, name):
+        """ Return the workspace with the given name """
+        allWorkspaces = self.getAll()
+        match = None
+        matches = [workspace for workspace in allWorkspaces if workspace.name == name]
+        
+        if len(matches) > 0:
+            match = matches[0]
+        return match
