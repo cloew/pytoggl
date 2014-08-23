@@ -25,7 +25,7 @@ class WorkspacesAPI:
         json = self.apiHelper.get(url)
         
         projects = []
-        for projectJSON in response.json():
+        for projectJSON in json:
             projects.append(Project(json=projectJSON))
             
         return projects
