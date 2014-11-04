@@ -2,6 +2,10 @@ from json_base import JsonBase
 
 class TimeEntry(JsonBase):
     """ Represents a Toggl Time Entry """
+    
+    def __init__(self, json=None, created_with="pytoggl", **kwargs):
+        """ Initialize the Time Entry """
+        JsonBase.__init__(self, json=json, created_with=created_with, **kwargs)
             
     def toJSONDictionary(self):
         """ Convert the Time Entry to JSON """
