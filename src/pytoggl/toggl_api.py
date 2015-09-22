@@ -1,8 +1,4 @@
-from pytoggl.api.projects_api import ProjectsAPI
-from pytoggl.api.timer_api import TimerAPI
-from pytoggl.api.workspaces_api import WorkspacesAPI
-
-from pytoggl.api.api_helper import ApiHelper
+from .api import ApiHelper, ProjectsAPI, TimerAPI, WorkspacesAPI
 
 class TogglAPI:
     """ Represents the top level of the Toggl API """

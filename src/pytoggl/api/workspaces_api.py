@@ -1,5 +1,4 @@
-from pytoggl.model.project import Project
-from pytoggl.model.workspace import Workspace
+from ..model import Project, Workspace
 
 class WorkspacesAPI:
     """ Represents the Toggl Workspaces API """

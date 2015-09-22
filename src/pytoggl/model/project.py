@@ -1,4 +1,4 @@
-from json_base import JsonBase
+from .json_base import JsonBase
 
 class Project(JsonBase):
     """ Represents a Toggl Project """

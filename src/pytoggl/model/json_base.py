@@ -9,7 +9,7 @@ class JsonBase:
         if json is not None:
             self.__values = json
         else:
-            for key, value in kwargs.iteritems():
+            for key, value in kwargs.items():
                 setattr(self, key, value)
             
     def toJSONDictionary(self):

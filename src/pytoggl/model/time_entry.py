@@ -1,4 +1,4 @@
-from json_base import JsonBase
+from .json_base import JsonBase
 
 class TimeEntry(JsonBase):
     """ Represents a Toggl Time Entry """

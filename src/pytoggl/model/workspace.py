@@ -1,4 +1,4 @@
-from json_base import JsonBase
+from .json_base import JsonBase
 
 class Workspace(JsonBase):
     """ Represents a Toggl Workspace """
