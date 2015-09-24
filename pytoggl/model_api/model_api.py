@@ -20,4 +20,4 @@ class ModelApi:
         
     def buildModels(self, json):
         """ Return the model objects to wrap the json """
-        return [self.modelCls(jsonElement) for jsonElement in json]
+        return [self.modelCls(**jsonElement) for jsonElement in json]
