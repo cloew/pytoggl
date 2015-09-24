@@ -2,7 +2,7 @@ from ..routes import Routes
 from ..model import Workspace
 from enum import Enum
 
-class Apis(Enum):
+class ModelApis(Enum):
     """ Represents the various Apis that can be accessed """
     Workspaces = Workspace, Routes.Workspaces, Routes.Workspace
     
