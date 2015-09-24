@@ -9,8 +9,9 @@ class JsonBase:
         for key, value in kwargs.items():
             setattr(self, key, value)
             
-    def toJson(self):
-        """ Retrieve the Json for this model """
+    @property
+    def json(self):
+        """ Return the Json for this model """
         return self._values
         
     def __getattr__(self, name):
