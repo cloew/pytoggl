@@ -9,11 +9,6 @@ class Model:
         self._data = JsonBase(**kwargs)
         self.connection = connection
         
-    def get(self):
-        """ Get this model using the Toggl Api """
-        json = self._api.get(self.connection, id=self.id)
-        self.updateJson(json)
-        
     def create(self):
         """ Create this model using the Toggl Api """
         json = self._api.create(self.connection, self.json)
