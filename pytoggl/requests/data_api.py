@@ -3,8 +3,9 @@ from ..routes import Routes
 class DataApi:
     """ Represents the various Apis that can be accessed """
     
-    def __init__(self, listRoute, itemRoute):
+    def __init__(self, jsonName, listRoute, itemRoute):
         """ Initialize the API with the List Route and Item Route """
+        self.jsonName = jsonName
         self.listRoute = listRoute
         self.itemRoute = itemRoute
         

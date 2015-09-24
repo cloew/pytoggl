@@ -21,7 +21,7 @@ class Model:
     @property
     def json(self):
         """ Return the Json for this model """
-        return self._data.json
+        return {self._api.jsonName: self._data.json}
         
     def updateJson(self, data):
         """ Update the Json for this model """
