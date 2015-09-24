@@ -1,10 +1,9 @@
-from .api import ApiHelper, ProjectsAPI, TimerAPI, WorkspacesAPI
+from .json_api import ApiHelper
+from .model_api import WorkspacesApi
 
 class TogglAPI:
     """ Represents the top level of the Toggl API """
-    apiWrappers = {"workspaces":WorkspacesAPI,
-                   "projects":ProjectsAPI,
-                   "timer":TimerAPI}
+    apiWrappers = {"workspaces":WorkspacesApi}
     
     def __init__(self, apiToken=None):
         """ Initialize the Toggl API """
