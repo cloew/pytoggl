@@ -1,12 +1,10 @@
 from .model import Model
+from .model_for_api import model_for_api
 from ..requests import RequestApis
 
+@model_for_api(RequestApis.Workspaces)
 class Workspace(Model):
     """ Represents a Toggl Workspace """
-    
-    def __init__(self, **kwargs):
-        """ Initialize with the keyword arguments """
-        Model.__init__(self, RequestApis.Workspaces, **kwargs)
         
     def __repr__(self):
         """ String representation of the workspace """
