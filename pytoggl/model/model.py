@@ -11,7 +11,7 @@ class Model:
         
     def get(self):
         """ Get this model using the Toggl Api """
-        json = self._api.get(self.connection)
+        json = self._api.get(self.connection, id=self.id)
         self.updateJson(json)
         
     def create(self):
