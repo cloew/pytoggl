@@ -1,2 +1,2 @@
-from pytoggl.toggl_api import TogglAPI
-from pytoggl.model import Project, TimeEntry, Workspace
+from .toggl_connection import TogglConnection
+from .model import Project, TimeEntry, Workspace

@@ -43,7 +43,7 @@ class Model:
             
     def __setattr__(self, name, value):
         """ Set an attribute of the Model """
-        if name in ["_api", "connection", "_data":
+        if name in ["_api", "connection", "_data"]:
             self.__dict__[name] = value
         else:
             setattr(self._data, name, value)

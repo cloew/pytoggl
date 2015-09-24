@@ -1,8 +1,13 @@
-from .json_base import JsonBase
+from .model import Model
+from ..json_api import Apis
 
-class Workspace(JsonBase):
+class Workspace(Model):
     """ Represents a Toggl Workspace """
+    
+    def __init__(self, **kwargs):
+        """ Initialize with the keyword arguments """
+        Model.__init__(self, Apis.Workspaces, **kwargs)
         
     def __repr__(self):
         """ String representation of the workspace """
-        return "{0}:{1}".format(self.id, self.name)
+        return "<Workspace({0})>".format(self.name)
