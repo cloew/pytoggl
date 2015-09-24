@@ -11,22 +11,22 @@ class Model:
         
     def get(self):
         """ Get this model using the Toggl Api """
-        json = self._api.get(self.connection.apiHelper)
+        json = self._api.get(self.connection)
         self.updateJson(json)
         
     def create(self):
         """ Create this model using the Toggl Api """
-        json = self._api.create(self.connection.apiHelper, self.json)
+        json = self._api.create(self.connection, self.json)
         self.updateJson(json)
         
     def update(self):
         """ Update this model using the Toggl Api """
-        json = self._api.update(self.connection.apiHelper, self.json, id=self.id)
+        json = self._api.update(self.connection, self.json, id=self.id)
         self.updateJson(json)
         
     def delete(self):
         """ Delete this model using the Toggl Api """
-        return self._api.delete(self.connection.apiHelper, id=self.id)
+        return self._api.delete(self.connection, id=self.id)
             
     @property
     def json(self):

@@ -10,12 +10,12 @@ class ModelApi:
         
     def all(self):
         """ Return all the Model Objects for the list route """
-        json = self.jsonApi.all(self.connection.apiHelper)
+        json = self.jsonApi.all(self.connection)
         return self.buildModels(json)
         
     def withId(self, id):
         """ Return the specific Model Object for the item route """
-        json = self.jsonApi.get(self.connection.apiHelper, id=id)
+        json = self.jsonApi.get(self.connection, id=id)
         return self.buildModels([json])[0]
         
     def buildModels(self, json):

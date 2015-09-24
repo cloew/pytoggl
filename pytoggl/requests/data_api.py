@@ -8,22 +8,22 @@ class DataApi:
         self.listRoute = listRoute
         self.itemRoute = itemRoute
         
-    def all(self, apiHelper):
+    def all(self, connection):
         """ Return all the Json for the list route """
-        return apiHelper.get(self.listRoute.build())
+        return connection.get(self.listRoute.build())
         
-    def get(self, apiHelper, **kwargs):
+    def get(self, connection, **kwargs):
         """ Return the specific Json for the item route """
-        return apiHelper.get(self.itemRoute.build(**kwargs))
+        return connection.get(self.itemRoute.build(**kwargs))
         
-    def create(self, apiHelper, data):
+    def create(self, connection, data):
         """ Create a new Data Object and return its Json """
-        return apiHelper.post(self.listRoute.build(), data=data)
+        return connection.post(self.listRoute.build(), data=data)
         
-    def update(self, apiHelper, data, **kwargs):
+    def update(self, connection, data, **kwargs):
         """ Update the Data Object and return its Json """
-        return apiHelper.put(self.itemRoute.build(**kwargs), data=data)
+        return connection.put(self.itemRoute.build(**kwargs), data=data)
         
-    def delete(self, apiHelper, **kwargs):
+    def delete(self, connection, **kwargs):
         """ Delete the Data Object and return its success """
-        return apiHelper.delete(self.itemRoute.build(**kwargs))
+        return connection.delete(self.itemRoute.build(**kwargs))

@@ -1,6 +1,9 @@
 from .api import WorkspacesApi
-from .requests import ApiHelper
+from .helpers import ApiHelper
 
+from kao_decorators import proxy_for
+
+@proxy_for('apiHelper', ['get', 'post', 'put', 'delete'])
 class TogglConnection:
     """ Represents a connection to the Toggl API """
     apiWrappers = {"workspaces":WorkspacesApi}
