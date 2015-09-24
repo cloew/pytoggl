@@ -2,9 +2,8 @@ from ..routes import Routes
 from ..model import Workspace
 from enum import Enum
 
-class ModelApis(Enum):
+class DataApi:
     """ Represents the various Apis that can be accessed """
-    Workspaces = Routes.Workspaces, Routes.Workspace
     
     def __init__(self, listRoute, itemRoute):
         """ Initialize the API with the List Route and Item Route """
