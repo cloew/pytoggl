@@ -1,4 +1,4 @@
-from .model_api import WorkspacesApi
+from .api import WorkspacesApi
 from .requests import ApiHelper
 
 class TogglConnection:
