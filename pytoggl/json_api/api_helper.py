@@ -23,6 +23,11 @@ class ApiHelper:
         """ Return the response JSON from a get request """
         response = self.requestHelper.post(url, data=data)
         return self.processor[getData](response)
+        
+    def delete(self, url):
+        """ Return the response success from a delete request """
+        response = self.requestHelper.delete()
+        return response.status_code == 200
     
     def processResponse(self, response):
         """ Process a given response """

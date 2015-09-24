@@ -24,3 +24,8 @@ class RequestHelper:
         """ Send a put request to the url provided """
         fullUrl = "{0}/{1}".format(self.url, url)
         return requests.put(fullUrl, headers=self.togglHeaders, auth=self.togglAuth, data=json.dumps(data))
+        
+    def delete(self, url):
+        """ Send a delete request to the url provided """
+        fullUrl = "{0}/{1}".format(self.url, url)
+        return requests.delete(fullUrl, headers=self.togglHeaders, auth=self.togglAuth)
