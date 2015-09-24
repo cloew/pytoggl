@@ -1,13 +1,13 @@
 from .model_api import ModelApi
-from ..json_api import Apis
+from ..requests import RequestApis
 from ..model import Workspace
 
 class WorkspacesApi(ModelApi):
     """ Represents the Toggl Workspaces API """
     
-    def __init__(self, apiHelper):
+    def __init__(self, connection):
         """ Initialize the Workspaces API """
-        ModelApi.__init__(self, Workspace, Apis.Workspaces, apiHelper)
+        ModelApi.__init__(self, Workspace, RequestApis.Workspaces, connection)
         
     def withName(self, name):
         """ Return the workspaces with the given name """

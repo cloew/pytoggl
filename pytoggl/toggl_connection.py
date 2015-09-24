@@ -1,5 +1,5 @@
-from .json_api import ApiHelper
 from .model_api import WorkspacesApi
+from .requests import ApiHelper
 
 class TogglConnection:
     """ Represents a connection to the Toggl API """
