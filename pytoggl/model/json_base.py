@@ -5,8 +5,12 @@ class JsonBase:
     
     def __init__(self, **kwargs):
         """ Initialize the JSON Record """
+        self.update(kwargs)
+        
+    def update(self, data):
+        """ Update with a given dictionary of data """
         self._values = {}
-        for key, value in kwargs.items():
+        for key, value in data.items():
             setattr(self, key, value)
             
     @property
