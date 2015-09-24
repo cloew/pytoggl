@@ -14,15 +14,15 @@ class DataApi:
         
     def get(self, apiHelper, **kwargs):
         """ Return the specific Json for the item route """
-        return apiHelper.get(self.itemRoute.build(**kwargs), getData=True)
+        return apiHelper.get(self.itemRoute.build(**kwargs))
         
     def create(self, apiHelper, data):
         """ Create a new Data Object and return its Json """
-        return apiHelper.post(self.listRoute.build(), data=data, getData=True)
+        return apiHelper.post(self.listRoute.build(), data=data)
         
     def update(self, apiHelper, data, **kwargs):
         """ Update the Data Object and return its Json """
-        return apiHelper.put(self.itemRoute.build(**kwargs), data=data, getData=True)
+        return apiHelper.put(self.itemRoute.build(**kwargs), data=data)
         
     def delete(self, apiHelper, **kwargs):
         """ Delete the Data Object and return its success """

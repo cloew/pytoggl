@@ -6,40 +6,41 @@ class ApiHelper:
     def __init__(self, apiToken=None):
         """ Initialize the API Helper """
         self.requestHelper = RequestHelper(apiToken)
-        self.processor = {True:self.processResponseData,
-                          False:self.processResponse}
         
-    def get(self, url, getData=False):
+    def get(self, url):
         """ Return the response JSON from a get request """
         response = self.requestHelper.get(url)
-        return self.processor[getData](response)
+        return self.process(response)
         
-    def put(self, url, data=None, getData=False):
+    def put(self, url, data=None):
         """ Return the response JSON from a get request """
         response = self.requestHelper.put(url, data=data)
-        return self.processor[getData](response)
+        return self.process(response)
         
-    def post(self, url, data=None, getData=False):
+    def post(self, url, data=None):
         """ Return the response JSON from a get request """
         response = self.requestHelper.post(url, data=data)
-        return self.processor[getData](response)
+        return self.process(response)
         
     def delete(self, url):
         """ Return the response success from a delete request """
         response = self.requestHelper.delete()
         return response.status_code == 200
     
-    def processResponse(self, response):
+    def process(self, response):
         """ Process a given response """
         if response.status_code == 200:
-            return response.json()
+            json = response.json()
+            if type(json) == list:
+                return json
+            else:
+                return self.processData(json)
         else:
             pass
             # Raise Exception
             
-    def processResponseData(self, response):
-        """ Process the given response for its data """
-        json = self.processResponse(response)
+    def processData(self, json):
+        """ Process the given json for its data """
         if json["data"] is not None:
             return json["data"]
         else:
