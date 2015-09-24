@@ -8,5 +8,5 @@ class TogglConnection:
     def __init__(self, apiToken=None):
         """ Initialize the Toggl API """
         self.apiHelper = ApiHelper(apiToken)
-        for key in self.apiWrappers:
-            setattr(self, key, self.apiWrappers[key](self))
+        for key, wrapper in self.apiWrappers.items():
+            setattr(self, key, wrapper(self))
