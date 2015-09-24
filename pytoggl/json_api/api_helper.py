@@ -1,4 +1,4 @@
-from pytoggl.api.request_helper import RequestHelper
+from .request_helper import RequestHelper
 
 class ApiHelper:
     """ Helper class to perform Toggl API requests """
