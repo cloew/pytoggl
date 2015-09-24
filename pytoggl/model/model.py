@@ -8,15 +8,6 @@ class Model:
         self._api = api
         self._data = JsonBase(**kwargs)
         self.connection = connection
-        
-    def update(self):
-        """ Update this model using the Toggl Api """
-        json = self._api.update(self.connection, self.json, id=self.id)
-        self.updateJson(json)
-        
-    def delete(self):
-        """ Delete this model using the Toggl Api """
-        return self._api.delete(self.connection, id=self.id)
             
     @property
     def json(self):
