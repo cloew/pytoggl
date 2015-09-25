@@ -1,7 +1,7 @@
 from .actions import Get, Update, AccessApi
 from .model import Model
 from .model_for_api import model_for_api
-from ..api.workspace_projects_api import WorkspaceProjectsApi
+from ..api.nested import WorkspaceProjectsApi
 from ..requests import RequestApis
 
 @model_for_api(RequestApis.Workspaces)

@@ -1,4 +1,4 @@
-from .model_wrapper import ModelWrapper
+from ..model_wrapper import ModelWrapper
 
 class NestedApi:
     """ Represents an Api that is nested within another Model """
