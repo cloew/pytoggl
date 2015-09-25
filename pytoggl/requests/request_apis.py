@@ -3,5 +3,5 @@ from ..routes import Routes
 
 class RequestApis:
     """ Helper class to wrap all the various Json Apis """
-    Workspaces = DataApi('workspace', Routes.Workspaces, Routes.Workspace)
-    Projects = DataApi('project', Routes.Projects, Routes.Project)
+    Workspaces = DataApi('workspace', all=Routes.Workspaces, item=Routes.Workspace)
+    Projects = DataApi('project', all=Routes.WorkspaceProjects, item=Routes.Project, create=Routes.Projects)

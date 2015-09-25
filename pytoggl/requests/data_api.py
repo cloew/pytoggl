@@ -3,11 +3,12 @@ from ..routes import Routes
 class DataApi:
     """ Represents the various Apis that can be accessed """
     
-    def __init__(self, jsonName, listRoute, itemRoute):
+    def __init__(self, jsonName, *, all, item, create=None):
         """ Initialize the API with the List Route and Item Route """
         self.jsonName = jsonName
-        self.listRoute = listRoute
-        self.itemRoute = itemRoute
+        self.listRoute = all
+        self.itemRoute = item
+        self.createRoute = create if create is not None else all
         
     def all(self, connection, **kwargs):
         """ Return all the Json for the list route """
@@ -19,7 +20,7 @@ class DataApi:
         
     def create(self, connection, data):
         """ Create a new Data Object and return its Json """
-        return connection.post(self.listRoute.build(), data=data)
+        return connection.post(self.createRoute.build(), data=data)
         
     def update(self, connection, data, **kwargs):
         """ Update the Data Object and return its Json """
