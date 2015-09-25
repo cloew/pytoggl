@@ -1,9 +1,11 @@
+from .actions import All
 from .model_api import ModelApi
 from ..requests import RequestApis
 from ..model import Workspace
 
 class WorkspacesApi(ModelApi):
     """ Represents the Toggl Workspaces API """
+    all = All()
     
     def __init__(self, connection):
         """ Initialize the Workspaces API """
