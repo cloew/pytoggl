@@ -7,6 +7,9 @@ class Routes(Enum):
     WorkspaceProjects = "workspaces/{id}/projects"
     Projects = "projects"
     Project = "projects/{id}"
+    StartTimer = "time_entries/start"
+    StopTimer = "time_entries/{id}/stop"
+    CurrentTimer = "time_entries/current"
     
     def build(self, **kwargs):
         """ Build the Url with the given arguments """
