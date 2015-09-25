@@ -7,7 +7,7 @@ class AllFromWorkspaces(KaoDescriptor):
         """ Return a method that retrieves all the Data Model objects from each of the workspaces """
         def all():
             projects = []
-            for workspace in connection.workspaces.all():
+            for workspace in obj.connection.workspaces.all():
                 json = obj.requestApi.all(obj.connection, id=workspace.id)
                 projects += obj.buildModels(json)
             return projects
