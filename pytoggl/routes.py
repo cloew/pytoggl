@@ -7,6 +7,8 @@ class Routes(Enum):
     WorkspaceProjects = "workspaces/{id}/projects"
     Projects = "projects"
     Project = "projects/{id}"
+    TimeEntries = "time_entries"
+    TimeEntry = "time_entries/{id}"
     StartTimer = "time_entries/start"
     StopTimer = "time_entries/{id}/stop"
     CurrentTimer = "time_entries/current"

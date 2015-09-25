@@ -6,4 +6,5 @@ class RequestApis:
     """ Helper class to wrap all the various Json Apis """
     Workspaces = DataApi('workspace', all=Routes.Workspaces, item=Routes.Workspace)
     Projects = DataApi('project', all=Routes.WorkspaceProjects, item=Routes.Project, create=Routes.Projects)
+    TimeEntries = DataApi('time_entry', all=Routes.TimeEntries, item=Routes.TimeEntry)
     Timer = TimerApi()
