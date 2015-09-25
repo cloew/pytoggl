@@ -1,12 +1,16 @@
-from .json_base import JsonBase
+from .actions import Get, Create, Update, Delete
+from .model import Model
+from .model_for_api import model_for_api
+from ..requests import RequestApis
 
-class Project(JsonBase):
+@model_for_api(RequestApis.Projects)
+class Project(Model):
     """ Represents a Toggl Project """
-            
-    def toJSONDictionary(self):
-        """ Convert the Project to JSON """
-        return {"project":JsonBase.toJSONDictionary(self)}
+    get = Get()
+    create = Create()
+    update = Update()
+    delete = Delete()
         
     def __repr__(self):
         """ String representation of the project """
-        return "{0}:{1}".format(self.id, self.name)
+        return "<Project({0})>".format(self.name)
