@@ -9,9 +9,9 @@ class DataApi:
         self.listRoute = listRoute
         self.itemRoute = itemRoute
         
-    def all(self, connection):
+    def all(self, connection, **kwargs):
         """ Return all the Json for the list route """
-        return connection.get(self.listRoute.build())
+        return connection.get(self.listRoute.build(**kwargs))
         
     def get(self, connection, **kwargs):
         """ Return the specific Json for the item route """
