@@ -1,6 +1,6 @@
 from ..routes import Routes
 
-class TimerAPI:
+class TimerApi:
     """ Represents the Toggl Timer API """
     
     def start(self, connection, data):
