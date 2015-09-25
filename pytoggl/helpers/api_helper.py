@@ -24,7 +24,7 @@ class ApiHelper:
         
     def delete(self, url):
         """ Return the response success from a delete request """
-        response = self.requestHelper.delete()
+        response = self.requestHelper.delete(url)
         return response.status_code == 200
     
     def process(self, response):
