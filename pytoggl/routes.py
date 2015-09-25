@@ -4,7 +4,8 @@ class Routes(Enum):
     """ Represents the various routes associated with the Toggl API """
     Workspaces = "workspaces"
     Workspace = "workspaces/{id}"
-    Projects = "workspaces/{id}/projects"
+    WorkspaceProjects = "workspaces/{id}/projects"
+    Projects = "projects"
     Project = "projects/{id}"
     
     def build(self, **kwargs):
