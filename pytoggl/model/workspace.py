@@ -1,6 +1,7 @@
-from .actions import Get, Update
+from .actions import Get, Update, AccessApi
 from .model import Model
 from .model_for_api import model_for_api
+from ..api.workspace_projects_api import WorkspaceProjectsApi
 from ..requests import RequestApis
 
 @model_for_api(RequestApis.Workspaces)
@@ -8,6 +9,7 @@ class Workspace(Model):
     """ Represents a Toggl Workspace """
     get = Get()
     update = Update()
+    projects = AccessApi(WorkspaceProjectsApi)
         
     def __repr__(self):
         """ String representation of the workspace """
