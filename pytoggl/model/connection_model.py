@@ -8,7 +8,7 @@ def connection_models(modelClasses):
     return wrap
 
 def connection_model(modelCls):
-    """ Decorator to aid a wrapper method to construct the modelCLs and bind it ot the Connection instance """
+    """ Decorator to aid a wrapper method to construct the modelCls and bind it to the Connection instance """
     def wrap(cls):
         def build(self, **kwargs):
             return modelCls(connection=self, **kwargs)

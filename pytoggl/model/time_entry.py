@@ -3,7 +3,7 @@ from .model import Model
 from .model_for_api import model_for_api
 from ..requests import RequestApis
 
-@model_for_api(RequestApis.TimeEntries)
+@model_for_api(RequestApis.TimeEntries, created_with="pytoggl")
 class TimeEntry(Model):
     """ Represents a Toggl Time Entry """
     get = Get()
@@ -15,4 +15,4 @@ class TimeEntry(Model):
         
     def __repr__(self):
         """ String representation of the project """
-        return "<TimeEntry({0})>".format(self.name)
+        return "<TimeEntry({0})>".format(self.description)

@@ -6,7 +6,7 @@ class StartTimer(KaoDescriptor):
     
     def _get(self, obj, type=None):
         """ Return a method to start the Timer """
-        def get():
+        def start():
             json = RequestApis.Timer.start(obj.connection, obj.json)
             obj.updateJson(json)
-        return get
+        return start

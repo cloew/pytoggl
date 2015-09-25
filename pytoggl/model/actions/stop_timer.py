@@ -6,7 +6,7 @@ class StopTimer(KaoDescriptor):
     
     def _get(self, obj, type=None):
         """ Return a method that stops the Timer """
-        def get():
+        def stop():
             json = RequestApis.Timer.stop(obj.connection, id=obj.id)
             obj.updateJson(json)
-        return get
+        return stop
