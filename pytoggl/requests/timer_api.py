@@ -8,7 +8,7 @@ class TimerAPI:
         url = Routes.StartTimer.build()
         return connection.post(url, data=data)
     
-    def stop(self, connection, * id):
+    def stop(self, connection, *, id):
         """ Stop the Time Entry """
         url = Routes.StartTimer.build(id=id)
         return connection.post(url)

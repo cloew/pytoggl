@@ -1,16 +1,18 @@
-from .json_base import JsonBase
+from .actions import Get, Create, Update, Delete, StartTimer, StopTimer
+from .model import Model
+from .model_for_api import model_for_api
+from ..requests import RequestApis
 
-class TimeEntry(JsonBase):
+@model_for_api(RequestApis.TimeEntries)
+class TimeEntry(Model):
     """ Represents a Toggl Time Entry """
-    
-    def __init__(self, json=None, created_with="pytoggl", **kwargs):
-        """ Initialize the Time Entry """
-        JsonBase.__init__(self, json=json, created_with=created_with, **kwargs)
-            
-    def toJSONDictionary(self):
-        """ Convert the Time Entry to JSON """
-        return {"time_entry":JsonBase.toJSONDictionary(self)}
+    get = Get()
+    create = Create()
+    update = Update()
+    delete = Delete()
+    start = StartTimer()
+    stop = StopTimer()
         
     def __repr__(self):
-        """ String representation of the Time Entry """
-        return "{0}:{1}".format(self.id, self.description)
+        """ String representation of the project """
+        return "<TimeEntry({0})>".format(self.name)
